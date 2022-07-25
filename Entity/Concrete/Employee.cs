@@ -18,10 +18,10 @@ namespace Entity.Concrete
         public string? SummaryInformation { get; set; }//özet bilgi
         public string? HobbiesAndInterests { get; set; }//hobileri ve ilgi alanları
         public City? City { get; set; }
-        public Contact Contact { get; set; }
-        public List<Reference> References { get; set; }
-        public List<EmployeeJob> EmployeeJobs { get; set; }
-        public List<EmployeeEducationInformartion> EmployeeEducationInformartions { get; set; }
+        public Contact? Contact { get; set; }
+        public List<Reference>? References { get; set; }
+        public List<EmployeeJob>? EmployeeJobs { get; set; }
+        public List<EmployeeEducation>? EmployeeEducationInformartions { get; set; }
 
 
     }

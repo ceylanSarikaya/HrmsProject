@@ -13,7 +13,7 @@ namespace Entity.Concrete
         public int CityId { get; set; }
         public int EmployerJobId { get; set; }
         public int ContactId { get; set; }
-        public string? CompanyName { get; set; }
+        public string? CompanyName { get; set; }//firma adı
         public City? City { get; set; }
         public List<EmployerJob>? EmployerJobs { get; set; }
         public Contact? Contact { get; set; }

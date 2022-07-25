@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entity.Concrete
 {
-    public class Resume:IEntity
+    public class Image:IEntity
     {
-        //özgeçmiş belgesi
         public int Id { get; set; }
-        public string? Title { get; set; }
-        public string? FilePath { get; set; }
+        public string? ImagePath { get; set; }
+        public DateTime Date { get; set; }
     }
 }

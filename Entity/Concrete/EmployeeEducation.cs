@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entity.Concrete
 {
-    public class EmployeeEducationInformartion:IEntity
+    public class EmployeeEducation:IEntity
     {
         public int Id { get; set; }
         public string? EducationSatatus { get; set; }//eğitim durumu
