@@ -1,4 +1,6 @@
-﻿using Data.Abstract;
+﻿using Core.DataAccess.EntityFramework;
+using Data.Abstract;
+using Data.Concrete.DatabaseContext;
 using Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace Data.Concrete
 {
-    public class EfCoreCityRepository 
+    public class EfCoreCityRepository : EfCoreGenericRepository<City,Context>,ICityRepository
     {
-     
+      
     }
 }
