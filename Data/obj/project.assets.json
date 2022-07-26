@@ -1808,9 +1808,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ceylan\\Desktop\\HrmsProject\\Data\\Data.csproj",
-      "projectName": "Data",
-      "projectPath": "C:\\Users\\Ceylan\\Desktop\\HrmsProject\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\Ceylan\\Desktop\\HrmsProject\\Data\\DataAccess.csproj",
+      "projectName": "DataAccess",
+      "projectPath": "C:\\Users\\Ceylan\\Desktop\\HrmsProject\\Data\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\Ceylan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Ceylan\\Desktop\\HrmsProject\\Data\\obj\\",
       "projectStyle": "PackageReference",

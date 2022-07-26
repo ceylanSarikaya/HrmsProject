@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,19 +28,38 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
-        public List<TEntity> GetAll()
+        //public List<TEntity> GetAll()
+        //{
+        //    using( var context = new TContext())
+        //    {
+        //      return  context.Set<TEntity>().ToList();
+        //    }
+        //}
+
+        public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
-            using( var context = new TContext())
+            using (var context = new TContext())
             {
-              return  context.Set<TEntity>().ToList();
+                return filter==null ? //filtre nul ise
+                    context.Set<TEntity>().ToList()  //YANİ FİLTRELİ DEGİLSE HEPSİNİ GEİTR
+                    : context.Set<TEntity>().Where(filter).ToList();//FİLTERE VARSA FİLTRELEYİP VER
+
             }
         }
 
-        public TEntity GetById(int id)
+        //public TEntity GetById(int id)
+        //{
+        //   using(var context = new TContext())
+        //    {
+        //     return context.Set<TEntity>().Find(id);
+        //    }
+        //}
+
+        public TEntity GetById(Expression<Func<TEntity, bool>> filter = null)
         {
-           using(var context = new TContext())
+            using (var context=new TContext())
             {
-             return context.Set<TEntity>().Find(id);
+                return context.Set<TEntity>().SingleOrDefault(filter);//bu filtreyi metotda uygula
             }
         }
 
