@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Data.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,11 @@ namespace Business.Concrete
 {
     public class EmployeeJobManager:IEmployeeJobService
     {
+        IEmployeeJobRepository _employeeJobRepository;
+
+        public EmployeeJobManager(IEmployeeJobRepository employeeJobRepository)
+        {
+            _employeeJobRepository = employeeJobRepository;
+        }
     }
 }

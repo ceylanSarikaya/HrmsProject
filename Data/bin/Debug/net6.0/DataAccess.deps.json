@@ -468,6 +468,9 @@
         }
       },
       "Entity/1.0.0": {
+        "dependencies": {
+          "Core": "1.0.0"
+        },
         "runtime": {
           "Entity.dll": {}
         }

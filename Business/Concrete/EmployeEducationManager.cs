@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Data.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,11 @@ namespace Business.Concrete
 {
     public class EmployeEducationManager:IEmployeeEducationService
     {
+        IEmployeeEducationRepository _employeeEducationRepository;
+
+        public EmployeEducationManager(IEmployeeEducationRepository employeeEducationRepository)
+        {
+            _employeeEducationRepository = employeeEducationRepository;
+        }
     }
 }

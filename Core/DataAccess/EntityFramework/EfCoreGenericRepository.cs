@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,11 @@ using System.Threading.Tasks;
 
 namespace Core.DataAccess.EntityFramework
 {
-    public class EfCoreGenericRepository<TEntity,TContext>:IRepository<TEntity>where TEntity : class where TContext :DbContext, new() 
+    // EfCoreGenericRepository<TEntity,TContext>: Bu iki tipte  bana bir şey ver
+    //IRepository<TEntity>: Hangi tabloyu verirsem onun tablosu olucak
+    public class EfCoreGenericRepository<TEntity,TContext>:IRepository<TEntity>
+        where TEntity : class,IEntity,new()
+        where TContext :DbContext, new() 
     {
         public void Add(TEntity entity)
         {
@@ -53,8 +58,6 @@ namespace Core.DataAccess.EntityFramework
         //    {
         //     return context.Set<TEntity>().Find(id);
         //    }
-        //}
-
         public TEntity GetById(Expression<Func<TEntity, bool>> filter = null)
         {
             using (var context=new TContext())
@@ -62,6 +65,8 @@ namespace Core.DataAccess.EntityFramework
                 return context.Set<TEntity>().SingleOrDefault(filter);//bu filtreyi metotda uygula
             }
         }
+
+     
 
         public void Update(TEntity entity)
         {

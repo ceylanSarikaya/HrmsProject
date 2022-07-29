@@ -11,6 +11,9 @@ namespace Business.Abstract
 {
     public interface ICityService
     {
+       //Task< List<City>> GetAll();
+       // Task<City>  GetById(int id);
+       // Task<City> Add(City city);
 
     }
 }

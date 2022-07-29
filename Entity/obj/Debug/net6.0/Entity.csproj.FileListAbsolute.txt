@@ -10,3 +10,6 @@ C:\Users\Ceylan\Desktop\HrmsProject\Entity\obj\Debug\net6.0\Entity.dll
 C:\Users\Ceylan\Desktop\HrmsProject\Entity\obj\Debug\net6.0\refint\Entity.dll
 C:\Users\Ceylan\Desktop\HrmsProject\Entity\obj\Debug\net6.0\Entity.pdb
 C:\Users\Ceylan\Desktop\HrmsProject\Entity\obj\Debug\net6.0\ref\Entity.dll
+C:\Users\Ceylan\Desktop\HrmsProject\Entity\bin\Debug\net6.0\Core.dll
+C:\Users\Ceylan\Desktop\HrmsProject\Entity\bin\Debug\net6.0\Core.pdb
+C:\Users\Ceylan\Desktop\HrmsProject\Entity\obj\Debug\net6.0\Entity.csproj.CopyComplete

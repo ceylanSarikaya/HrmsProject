@@ -170,7 +170,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Ceylan\\Desktop\\HrmsProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\Ceylan\\Desktop\\HrmsProject\\Core\\Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
