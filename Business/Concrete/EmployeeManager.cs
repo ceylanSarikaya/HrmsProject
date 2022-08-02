@@ -10,6 +10,6 @@ namespace Business.Concrete
 {
     public class EmployeeManager:IEmployeeService
     {
-        IEmployeeRepository _employeeRepository;
+        //IEmployeeRepository _employeeRepository;
     }
 }

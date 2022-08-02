@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using Data.Abstract;
 using Entity.Concrete;
 using System;
@@ -17,6 +18,26 @@ namespace Business.Concrete
         public CityManager(ICityRepository cityRepository)
         {
             _cityRepository = cityRepository;
+        }
+
+        public Task<IResult> Add(City city)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Delete(City city)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IDataResult<List<City>>> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IResult> Update(City city)
+        {
+            throw new NotImplementedException();
         }
     }
 }

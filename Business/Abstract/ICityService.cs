@@ -1,4 +1,5 @@
 ﻿using Core.DataAccess;
+using Core.Utilities.Results;
 using Data.Abstract;
 using Entity.Concrete;
 using System;
@@ -13,7 +14,10 @@ namespace Business.Abstract
     {
        //Task< List<City>> GetAll();
        // Task<City>  GetById(int id);
-       // Task<City> Add(City city);
+        Task<IResult> Add(City city);
+        Task<IResult> Update(City city);
+        Task Delete(City city);
+        Task<IDataResult<List<City>>> GetAll();
 
     }
 }
