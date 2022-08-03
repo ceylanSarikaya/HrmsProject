@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using Data.Abstract;
 using Entity.Concrete;
@@ -20,24 +21,35 @@ namespace Business.Concrete
             _cityRepository = cityRepository;
         }
 
-        public Task<IResult> Add(City city)
+        public async Task<IResult> Add(City city)
         {
-            throw new NotImplementedException();
+            await _cityRepository.AddAsync(city);
+            return  new SuccessResult(Messages.MessageAdd);
+            
         }
 
-        public Task Delete(City city)
+        public async Task<IResult> Delete(City city)
         {
-            throw new NotImplementedException();
+            await _cityRepository.DeleteAsync(city);
+            return new SuccessResult();
         }
 
-        public Task<IDataResult<List<City>>> GetAll()
+        public async Task<IDataResult<List<City>>> GetAll()
         {
-            throw new NotImplementedException();
+           var result= await _cityRepository.GetAllAsync();
+            return new SuccessDataResult<List<City>> (result.ToList(),Messages.MessageGetAll);
         }
 
-        public Task<IResult> Update(City city)
+        public async Task<IDataResult<City>> GetById(int id)
         {
-            throw new NotImplementedException();
+            var result = await _cityRepository.GetAsync(c => c.Id == id);
+            return new SuccessDataResult<City>(result);
+        }
+
+        public async Task<IResult> Update(City city)
+        {
+            await _cityRepository.UpdateAsync(city);
+            return new SuccessResult();
         }
     }
 }

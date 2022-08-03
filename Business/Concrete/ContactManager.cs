@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using Data.Abstract;
+using Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,31 @@ namespace Business.Concrete
         public ContactManager(IContactRepository contactRepository)
         {
             _contactRepository = contactRepository;
+        }
+
+        public Task<IResult> Add(Contact contact)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Delete(Contact contact)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IDataResult<List<Contact>>> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IDataResult<Contact>> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IResult> Update(Contact contact)
+        {
+            throw new NotImplementedException();
         }
     }
 }

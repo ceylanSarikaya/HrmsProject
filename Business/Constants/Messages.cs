@@ -11,5 +11,6 @@ namespace Business.Constants
         public static string MessageAdd = "Ekleme İşlemi Başarılı";
         public static string MessageDelete = "Silme İşlemi Başarılı";
         public static string MessageUpdate = "Güncelleme İşlemi Başarılı";
+        public static string MessageGetAll = "Listelendi";
     }
 }

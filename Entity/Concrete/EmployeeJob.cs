@@ -11,6 +11,7 @@ namespace Entity.Concrete
     public class EmployeeJob:IEntity
     {
         public int Id { get; set; }
+        public int CityId { get; set; }
         public string? CompanyName { get; set; }//firma adı
         public string? Position { get; set; }//pozisyon
         public string? CompanySector { get; set; }//firma sektörü
@@ -18,5 +19,7 @@ namespace Entity.Concrete
         public City? City { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public Employee Employee { get; set; }
+
     }
 }

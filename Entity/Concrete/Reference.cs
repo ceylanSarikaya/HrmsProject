@@ -16,5 +16,6 @@ namespace Entity.Concrete
         public string? PositionInTheCompany { get; set; }
         public string? Phone { get; set; }
         public string? Email { get; set; }
+        public Employee Employee { get; set; }
     }
 }

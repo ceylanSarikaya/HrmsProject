@@ -16,8 +16,9 @@ namespace Business.Abstract
        // Task<City>  GetById(int id);
         Task<IResult> Add(City city);
         Task<IResult> Update(City city);
-        Task Delete(City city);
+        Task<IResult> Delete(City city);
         Task<IDataResult<List<City>>> GetAll();
+        Task<IDataResult<City>> GetById(int id);
 
     }
 }

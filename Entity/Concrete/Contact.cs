@@ -14,6 +14,8 @@ namespace Entity.Concrete
         public string? Address { get; set; }
         public string? Email { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public List<Employee> Employees { get; set; }
 
+        public List<Employer> Employers { get; set; }
     }
 }

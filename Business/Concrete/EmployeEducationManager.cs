@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using Data.Abstract;
+using Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,31 @@ namespace Business.Concrete
         public EmployeEducationManager(IEmployeeEducationRepository employeeEducationRepository)
         {
             _employeeEducationRepository = employeeEducationRepository;
+        }
+
+        public Task<IResult> Add(EmployeeEducation entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IResult> Delete(EmployeeEducation employeeEducation)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IDataResult<List<EmployeeEducation>>> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IDataResult<EmployeeEducation>> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IResult> Update(EmployeeEducation entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

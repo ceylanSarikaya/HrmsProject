@@ -23,7 +23,7 @@ namespace Data.Concrete.DatabaseContext
         public DbSet<EmployerJob> EmployerJobs { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Reference> References { get; set; }
-        public DbSet<Resume> Resumes { get; set; }
+  
 
     }
 }

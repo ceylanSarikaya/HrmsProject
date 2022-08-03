@@ -11,70 +11,55 @@ namespace Core.DataAccess.EntityFramework
 {
     // EfCoreGenericRepository<TEntity,TContext>: Bu iki tipte  bana bir şey ver
     //IRepository<TEntity>: Hangi tabloyu verirsem onun tablosu olucak
-    public class EfCoreGenericRepository<TEntity,TContext>:IRepository<TEntity>
-        where TEntity : class,IEntity,new()
-        where TContext :DbContext, new() 
+    public class EfCoreGenericRepository<TEntity, TContext> : IRepository<TEntity>
+        where TEntity : class, IEntity, new()
+        where TContext : DbContext, new()
     {
-        public void Add(TEntity entity)
-        {
-           using (var context = new TContext())
-            {
-                context.Set<TEntity>().Add(entity);
-                context.SaveChanges();
-            }
-        }
-
-        public void Delete(TEntity entity)
-        {
-          using(var context = new TContext())
-            {
-                context.Set<TEntity>().Remove(entity);
-                context.SaveChanges();
-            }
-        }
-
-        //public List<TEntity> GetAll()
-        //{
-        //    using( var context = new TContext())
-        //    {
-        //      return  context.Set<TEntity>().ToList();
-        //    }
-        //}
-
-        public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
+        public async Task AddAsync(TEntity entity)
         {
             using (var context = new TContext())
             {
-                return filter==null ? //filtre nul ise
-                    context.Set<TEntity>().ToList()  //YANİ FİLTRELİ DEGİLSE HEPSİNİ GEİTR
-                    : context.Set<TEntity>().Where(filter).ToList();//FİLTERE VARSA FİLTRELEYİP VER
-
+                /*var data= context.Set<TEntity>().Add(entity).Entity;*///eklediğimde verinin veri tabanındakı referansını geri döndürür.
+                context.Set<TEntity>().Add(entity);
+                await context.SaveChangesAsync();
             }
         }
 
-        //public TEntity GetById(int id)
-        //{
-        //   using(var context = new TContext())
-        //    {
-        //     return context.Set<TEntity>().Find(id);
-        //    }
-        public TEntity GetById(Expression<Func<TEntity, bool>> filter = null)
+        public async Task DeleteAsync(TEntity entity)
         {
-            using (var context=new TContext())
+            using (var context = new TContext())
             {
-                return context.Set<TEntity>().SingleOrDefault(filter);//bu filtreyi metotda uygula
+                context.Set<TEntity>().Remove(entity);
+              await  context.SaveChangesAsync();
             }
         }
 
-     
-
-        public void Update(TEntity entity)
+        public async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> filter = null)
         {
-         using (var context = new TContext())
-         {
+            using (var context = new TContext())
+            {
+                return filter == null ? //filtre nul ise
+                await context.Set<TEntity>().ToListAsync()  //YANİ FİLTRELİ DEGİLSE HEPSİNİ GEİTR
+                : await context.Set<TEntity>().Where(filter).ToListAsync();//FİLTERE VARSA FİLTRELEYİP VER
+
+            }
+        }
+
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter = null)
+        {
+            using (var context = new TContext())
+            {
+                return await context.Set<TEntity>().SingleOrDefaultAsync(filter);//bu filtreyi metotda uygula
+            }
+        }
+       
+        public async Task UpdateAsync(TEntity entity)
+        {
+            using (var context = new TContext())
+            {
                 context.Set<TEntity>().Update(entity);
-                context.SaveChanges();
-         }
+                await context.SaveChangesAsync();
+            }
         }
     }
 }

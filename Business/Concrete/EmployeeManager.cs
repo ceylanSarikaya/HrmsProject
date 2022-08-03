@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using Data.Abstract;
+using Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +10,31 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    public class EmployeeManager:IEmployeeService
+    public class EmployeeManager : IEmployeeService
     {
-        //IEmployeeRepository _employeeRepository;
+        public Task<IResult> Add(Employee employee)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IResult> Delete(Employee employee)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IDataResult<List<Employee>>> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IDataResult<Employee>> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IResult> Update(Employee employee)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
